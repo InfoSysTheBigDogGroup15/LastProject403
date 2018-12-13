@@ -1,8 +1,55 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-Buttons go here my homies
+<head>
+    <link rel="stylesheet" href="~/Content/GrantStyles.css">
+    <link href="~/Content/Landing.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h1>
+                Ready to make the switch?
+            </h1>
+            <center>
+                <div class="col-md-6">
+                    <p><a class="btn btn-primary" href="@Url.Action("OrderStraws","RealHome")">Order Straws for your business &raquo;</a></p>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-danger">Order straws for your home</button>
+                </div>
+            </center>
+            </br>
+            <p>
+                Our straws are 100% biodegradeable and can be used in many situations, anything from restaurants in paris to weddings on the beach.
+            </p>
+            </br>
+        </div>
+    </div>
+    <div class=" container-fluid">
+        <div class="jumbotron" style="background-image:none">
+            <center>
+                <iframe width="800" height="600"
+                        src="https://www.youtube.com/embed/Rr5Py1r9xjw"
+                        frameborder="0" allow="accelerometer; autoplay;
+            encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </center>
+            <h2>
+                Straw Facts
+            </h2>
+            <ul>
+                <li>
+                    Straws make up 4% of plastic trash
+                </li>
+                <li>
+                    Americans use 500 million drinking straws a day
+                </li>
+                <li>
+                    Straws take 500 years to decompose
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>

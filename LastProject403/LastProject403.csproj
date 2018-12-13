@@ -258,6 +258,7 @@
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\RealHome\Create.cshtml" />
+    <Content Include="Views\RealHome\OrderStraws.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

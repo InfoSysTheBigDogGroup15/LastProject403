@@ -73,5 +73,9 @@ namespace LastProject403.Controllers
 
             return View(users);
         }
+        public ActionResult OrderStraws()
+        {
+            return View();
+        }
     }
 }
