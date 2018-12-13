@@ -175,8 +175,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Inventories1Controller.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\Orders1Controller.cs" />
     <Compile Include="Controllers\RealHomeController.cs" />
+    <Compile Include="Controllers\Straws1Controller.cs" />
+    <Compile Include="Controllers\Users1Controller.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="DAL\StrawContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -259,6 +263,26 @@
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\RealHome\Create.cshtml" />
     <Content Include="Views\RealHome\OrderStraws.cshtml" />
+    <Content Include="Views\Orders1\Create.cshtml" />
+    <Content Include="Views\Orders1\Delete.cshtml" />
+    <Content Include="Views\Orders1\Details.cshtml" />
+    <Content Include="Views\Orders1\Edit.cshtml" />
+    <Content Include="Views\Orders1\Index.cshtml" />
+    <Content Include="Views\Straws1\Create.cshtml" />
+    <Content Include="Views\Straws1\Delete.cshtml" />
+    <Content Include="Views\Straws1\Details.cshtml" />
+    <Content Include="Views\Straws1\Edit.cshtml" />
+    <Content Include="Views\Straws1\Index.cshtml" />
+    <Content Include="Views\Users1\Create.cshtml" />
+    <Content Include="Views\Users1\Delete.cshtml" />
+    <Content Include="Views\Users1\Details.cshtml" />
+    <Content Include="Views\Users1\Edit.cshtml" />
+    <Content Include="Views\Users1\Index.cshtml" />
+    <Content Include="Views\Inventories1\Create.cshtml" />
+    <Content Include="Views\Inventories1\Delete.cshtml" />
+    <Content Include="Views\Inventories1\Details.cshtml" />
+    <Content Include="Views\Inventories1\Edit.cshtml" />
+    <Content Include="Views\Inventories1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

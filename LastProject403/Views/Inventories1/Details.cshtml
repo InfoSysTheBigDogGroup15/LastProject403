@@ -1,0 +1,34 @@
+﻿@model LastProject403.Models.Inventories
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Inventories</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Straws.strawMaterial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Straws.strawMaterial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantity)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.inventoryID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

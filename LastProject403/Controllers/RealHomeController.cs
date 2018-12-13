@@ -75,6 +75,8 @@ namespace LastProject403.Controllers
         }
         public ActionResult OrderStraws()
         {
+            ViewBag.strawID = new SelectList(db.Straw, "strawID", "strawMaterial");
+            ViewBag.userID = new SelectList(db.User, "userID", "userEmail");
             return View();
         }
     }

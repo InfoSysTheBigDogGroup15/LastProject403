@@ -1,0 +1,45 @@
+﻿@model IEnumerable<LastProject403.Models.Straws>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.strawMaterial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.strawHeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.strawColor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.strawMaterial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.strawHeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.strawColor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.strawID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.strawID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.strawID })
+        </td>
+    </tr>
+}
+
+</table>
