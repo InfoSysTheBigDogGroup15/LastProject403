@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="container">
+        <div class="row">
+            <div class="Absolute-Center is-Responsive">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div id="logo-container"></div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        @Html.TextBox("Username", null, new { @class = "form-control", placeholder = "username" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        @Html.TextBox("Password", null, new { @class = "form-control", type = "password", placeholder = "password" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Login" class="btn btn-def btn-block" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+</body>
+</html>
+

@@ -19,8 +19,24 @@ namespace LastProject403.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Login()
+        public ActionResult Login(FormCollection form, bool rememberMe = false)
         {
+            string username = form["Username"];
+            string password = form["Password"];
+            //linear search
+            //reroute find role send to dashboard
+            //List<UserAuth> auths = db.UserAuths.ToList();
+            //bool YN = false;
+            //foreach (UserAuth auth in auths)
+            //{
+            //    if (auth.username == username && auth.password == password)
+            //    {
+            //        FormsAuthentication.SetAuthCookie(auth.authorizationID.ToString(), rememberMe);
+            //        return RedirectToAction("Index", "Home");
+            //    }
+
+
+            //}
             return View();
         }
         public ActionResult Logout()
