@@ -36,7 +36,7 @@ namespace LastProject403.Controllers
                 if (User1.userEmail == email && User1.password == password)
                 {
                     FormsAuthentication.SetAuthCookie(email, rememberMe);
-                    return RedirectToAction("Index", "RealsHome");
+                    return RedirectToAction("Index", "RealHome");
                 }
 
 
