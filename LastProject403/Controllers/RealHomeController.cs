@@ -36,7 +36,7 @@ namespace LastProject403.Controllers
                 if (User1.userEmail == email && User1.password == password)
                 {
                     FormsAuthentication.SetAuthCookie(email, rememberMe);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "RealsHome");
                 }
 
 
@@ -45,7 +45,33 @@ namespace LastProject403.Controllers
         }
         public ActionResult Logout()
         {
+
+            if (User.Identity.IsAuthenticated == true)
+            {
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "RealHome");
+            }
+            else
+            {
+                return RedirectToAction("Login", "RealHome");
+            }
+        }
+        public ActionResult Create()
+        {
             return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "userID,userEmail,password,firstname,lastname")] Users users)
+        {
+            if (ModelState.IsValid)
+            {
+                db.User.Add(users);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(users);
         }
     }
 }
