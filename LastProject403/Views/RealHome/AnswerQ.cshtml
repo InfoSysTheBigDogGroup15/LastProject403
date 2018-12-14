@@ -16,7 +16,7 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.commentID)
     @Html.HiddenFor(model => model.userName)
-    @Html.HiddenFor(model => model.comments)
+    @Html.HiddenFor(model => model.question)
    
     @ViewBag.comment
     <div class="form-group">
@@ -36,5 +36,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "DisplayQuestions")
 </div>

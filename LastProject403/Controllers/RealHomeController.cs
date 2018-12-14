@@ -148,7 +148,6 @@ namespace LastProject403.Controllers
         }
         public ActionResult AnswerQ(int? id)
         {
-
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -158,7 +157,17 @@ namespace LastProject403.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.comment = comments.comments;
+            return View(comments);
+        }
+        [HttpPost]
+        public ActionResult AnswerQ([Bind(Include = "commentID,userName,question,answers")] Comments comments)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(comments).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("DisplayQuestions");
+            }
             return View(comments);
         }
         public ActionResult CreateQuestion()
@@ -166,13 +175,14 @@ namespace LastProject403.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult CreateQuestion([Bind(Include = "commentID,userName,comments,answers")] Comments comments)
+        public ActionResult CreateQuestion([Bind(Include = "commentID,userName,question,answers")] Comments comments)
         {
+            comments.userName = User.Identity.Name;
             if (ModelState.IsValid)
             {
                 db.Comments.Add(comments);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("DisplayQuestions");
             }
 
             return View(comments);
