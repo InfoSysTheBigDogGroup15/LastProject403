@@ -77,7 +77,7 @@ namespace LastProject403.Controllers
 
             return View(users);
         }
-
+        [Authorize]
         public ActionResult Catalog()
         {
             return View(db.Straw.ToList());
@@ -160,6 +160,26 @@ namespace LastProject403.Controllers
             }
             ViewBag.comment = comments.comments;
             return View(comments);
+        }
+        public ActionResult CreateQuestion()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateQuestion([Bind(Include = "commentID,userName,comments,answers")] Comments comments)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Comments.Add(comments);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(comments);
+        }
+        public ActionResult Logoff()
+        {
+            return View("Login");
         }
     }
 
