@@ -1,0 +1,43 @@
+﻿@model IEnumerable<LastProject403.Models.Comments>
+
+@{
+    ViewBag.Title = "FAQ";
+}
+
+<h2>FAQ</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.userName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.answers)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.userName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.answers)
+        </td>
+        <td>
+            @Html.ActionLink("Answer Question", "Edit", new { id=item.commentID })
+        </td>
+    </tr>
+}
+
+</table>

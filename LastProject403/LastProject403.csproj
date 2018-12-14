@@ -306,6 +306,9 @@
     <Content Include="Views\RealHome\AnswerQ.cshtml" />
     <Content Include="Views\Home\ManageOrder.cshtml" />
     <Content Include="Views\RealHome\ManageOrder.cshtml" />
+    <Content Include="Views\Home\Edit.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\FAQ.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
