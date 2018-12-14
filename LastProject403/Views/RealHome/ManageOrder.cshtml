@@ -1,0 +1,46 @@
+﻿@model IEnumerable<LastProject403.Models.Orders>
+
+@{
+    ViewBag.Title = "ManageOrder";
+}
+
+<h2>Manage Order</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Straws.strawMaterial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Users.userEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quantityOrdered)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Straws.strawMaterial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Users.userEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantityOrdered)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.orderID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.orderID })
+        </td>
+    </tr>
+}
+
+</table>
+<div class="form-group">
+    @Html.ActionLink("Back", "Index", null, new { @class = "btn btn-default" })
+    @Html.ActionLink("Place an Order", "OrderStraws", null, new { @class = "btn btn-default" })
+
+</div>

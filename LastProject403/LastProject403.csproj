@@ -294,6 +294,8 @@
     <Content Include="Views\Home\Catalog.cshtml" />
     <Content Include="Views\Home\OrderStraws.cshtml" />
     <Content Include="Views\RealHome\Catalog.cshtml" />
+    <Content Include="Views\RealHome\Edit.cshtml" />
+    <Content Include="Views\RealHome\ManageOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

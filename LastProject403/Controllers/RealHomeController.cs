@@ -6,6 +6,8 @@ using System.Web;
 using System.Web.Mvc;
 using LastProject403.Models;
 using System.Web.Security;
+using System.Net;
+using System.Data.Entity;
 
 namespace LastProject403.Controllers
 {
@@ -84,6 +86,26 @@ namespace LastProject403.Controllers
             ViewBag.strawID = new SelectList(db.Straw, "strawID", "strawMaterial");
             ViewBag.userID = new SelectList(db.User, "userID", "userEmail");
             return View();
+        }
+
+        public ActionResult ManageOrder()
+        {
+            return View(db.Order.ToList());
+        }
+
+        // GET: Orders1/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Orders orders = db.Order.Find(id);
+            if (orders == null)
+            {
+                return HttpNotFound();
+            }
+            return View(orders);
         }
     }
 }
