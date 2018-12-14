@@ -15,7 +15,7 @@ namespace LastProject403.Models
 
         public String userName { get; set; }
 
-        public String comments { get; set; }
+        public String question { get; set; }
 
         public String answers { get; set; }
     }

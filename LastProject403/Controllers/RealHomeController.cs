@@ -158,7 +158,7 @@ namespace LastProject403.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.comment = comments.comments;
+            ViewBag.comment = comments.question;
             return View(comments);
         }
     }
