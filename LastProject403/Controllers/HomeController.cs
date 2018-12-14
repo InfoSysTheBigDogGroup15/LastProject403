@@ -60,10 +60,12 @@ namespace LastProject403.Controllers
 
         public ActionResult ThankYou()
         {
-
-
             return View();
         }
 
+        public ActionResult ManageOrder()
+        {
+            return View(db.Order.ToList());
+        }
     }
 }

@@ -13,18 +13,21 @@
                 Ready to make the switch?
             </h1>
             <center>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     @Html.ActionLink("Order straws for your business", "Catalog", null, new { @class = "btn btn-primary btn-large" })
                 </div>
-                <div class="col-md-6">
-                    @Html.ActionLink("Order straws for your home", "Catalog", null, new { @class = "btn btn-danger" })
+                <div class="col-md-4">
+                    @Html.ActionLink("Manage Order", "ManageOrder", null, new { @class = "btn btn-danger" })
+                </div>
+                <div class="col-md-4">
+                    @Html.ActionLink("FAQ", "DisplayQuestion", null, new { @class = "btn btn-default" })
                 </div>
             </center>
-            </br>
+            <br/>
             <p>
                 Our straws are 100% biodegradeable and can be used in many situations, anything from restaurants in paris to weddings on the beach.
             </p>
-            </br>
+            <br/>
         </div>
     </div>
     <div class=" container-fluid">

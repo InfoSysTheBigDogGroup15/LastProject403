@@ -58,11 +58,11 @@ namespace LastProject403
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "967445372278-sjhv69gi7d7e5u7kpijinub71ukqgp21.apps.googleusercontent.com",
+                ClientSecret = "F9Drn2-5KxM417a6iGQviTq6"
+            });
         }
     }
 }

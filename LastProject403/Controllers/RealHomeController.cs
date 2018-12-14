@@ -32,7 +32,7 @@ namespace LastProject403.Controllers
             //linear search
             //reroute find role send to dashboard
             List<Users> AllUsers = db.User.ToList();
-            bool YN = false;
+            //bool YN = false;
             foreach (Users User1 in AllUsers)
             {
                 if (User1.userEmail == email && User1.password == password)
