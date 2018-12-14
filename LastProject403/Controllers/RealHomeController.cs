@@ -179,6 +179,7 @@ namespace LastProject403.Controllers
         }
         public ActionResult Logoff()
         {
+            FormsAuthentication.SignOut();
             return View("Login");
         }
 
