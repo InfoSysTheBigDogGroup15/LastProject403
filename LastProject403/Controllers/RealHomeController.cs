@@ -68,8 +68,10 @@ namespace LastProject403.Controllers
         {
             if (ModelState.IsValid)
             {
+                bool rememberMe = false;
                 db.User.Add(users);
                 db.SaveChanges();
+                FormsAuthentication.SetAuthCookie(users.userEmail, rememberMe);
                 return RedirectToAction("Index");
             }
 
