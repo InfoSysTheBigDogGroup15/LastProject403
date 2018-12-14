@@ -301,6 +301,8 @@
     <Content Include="Views\RealHome\DisplayQuestions.cshtml" />
     <Content Include="Views\RealHome\AnswerQ.cshtml" />
     <Content Include="Views\RealHome\CreateQuestion.cshtml" />
+    <Content Include="Views\RealHome\Delete.cshtml" />
+    <Content Include="Views\RealHome\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

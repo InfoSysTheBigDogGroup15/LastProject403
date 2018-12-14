@@ -77,12 +77,12 @@ namespace LastProject403.Controllers
 
             return View(users);
         }
-        [Authorize]
+
         public ActionResult Catalog()
         {
             return View(db.Straw.ToList());
         }
-
+        [Authorize]
         public ActionResult OrderStraws()
         {
             ViewBag.strawID = new SelectList(db.Straw, "strawID", "strawMaterial");
@@ -108,26 +108,26 @@ namespace LastProject403.Controllers
             ViewBag.userID = new SelectList(db.User, "userID", "userEmail", orders.userID);
             return View(orders);
         }
-
+        [Authorize]
         public ActionResult ManageOrder()
         {
             return View(db.Order.ToList());
         }
 
         // GET: Orders1/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Orders orders = db.Order.Find(id);
-            if (orders == null)
-            {
-                return HttpNotFound();
-            }
-            return View(orders);
-        }
+        //public ActionResult Edit(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Orders orders = db.Order.Find(id);
+        //    if (orders == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(orders);
+        //}
 
         public ActionResult Details(int? id)
         {
@@ -181,6 +181,66 @@ namespace LastProject403.Controllers
         {
             return View("Login");
         }
+
+        // GET: Orders1/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Orders orders = db.Order.Find(id);
+            if (orders == null)
+            {
+                return HttpNotFound();
+            }
+            return View(orders);
+        }
+        // POST: Orders1/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Orders orders = db.Order.Find(id);
+            db.Order.Remove(orders);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        // GET: Orders1/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Orders orders = db.Order.Find(id);
+            if (orders == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.strawID = new SelectList(db.Straw, "strawID", "strawMaterial", orders.strawID);
+            ViewBag.userID = new SelectList(db.User, "userID", "userEmail", orders.userID);
+            return View(orders);
+        }
+
+        // POST: Orders1/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "orderID,strawID,userID,quantityOrdered")] Orders orders)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(orders).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.strawID = new SelectList(db.Straw, "strawID", "strawMaterial", orders.strawID);
+            ViewBag.userID = new SelectList(db.User, "userID", "userEmail", orders.userID);
+            return View(orders);
+        }
+
     }
 
 
