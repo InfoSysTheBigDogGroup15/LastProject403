@@ -291,6 +291,9 @@
     <Content Include="Views\Inventories1\Details.cshtml" />
     <Content Include="Views\Inventories1\Edit.cshtml" />
     <Content Include="Views\Inventories1\Index.cshtml" />
+    <Content Include="Views\Home\Catalog.cshtml" />
+    <Content Include="Views\Home\OrderStraws.cshtml" />
+    <Content Include="Views\RealHome\Catalog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

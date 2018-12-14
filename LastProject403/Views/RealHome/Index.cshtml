@@ -14,10 +14,10 @@
             </h1>
             <center>
                 <div class="col-md-6">
-                    <p><a class="btn btn-primary" href="@Url.Action("OrderStraws","RealHome")">Order Straws for your business &raquo;</a></p>
+                    @Html.ActionLink("Order straws for your business", "Catalog", null, new { @class = "btn btn-primary btn-large" })
                 </div>
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-danger">Order straws for your home</button>
+                    @Html.ActionLink("Order straws for your home", "Catalog", null, new { @class = "btn btn-danger" })
                 </div>
             </center>
             </br>

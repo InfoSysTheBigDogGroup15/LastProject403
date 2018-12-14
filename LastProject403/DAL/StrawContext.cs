@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
-using LastProject403.Models;
 
 
 namespace LastProject403.DAL

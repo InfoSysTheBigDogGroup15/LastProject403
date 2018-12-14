@@ -73,6 +73,12 @@ namespace LastProject403.Controllers
 
             return View(users);
         }
+
+        public ActionResult Catalog()
+        {
+            return View(db.Straw.ToList());
+        }
+
         public ActionResult OrderStraws()
         {
             ViewBag.strawID = new SelectList(db.Straw, "strawID", "strawMaterial");
