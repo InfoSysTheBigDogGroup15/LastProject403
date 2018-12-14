@@ -13,10 +13,10 @@ namespace LastProject403.Models
         [Key]
         public int commentID { get; set; }
 
-        public String userName { get; set; }
+        public string userName { get; set; }
 
-        public String comments { get; set; }
+        public string comments { get; set; }
 
-        public String answers { get; set; }
+        public string answers { get; set; }
     }
 }
