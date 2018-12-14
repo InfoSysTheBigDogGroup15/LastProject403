@@ -22,17 +22,20 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.strawMaterial)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.strawHeight)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.strawColor)
-            </td>
-        </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.strawMaterial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.strawHeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.strawColor)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.strawID })
+        </td>
+    </tr>
     }
 </table>
 <div class="form-group">

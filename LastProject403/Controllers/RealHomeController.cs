@@ -88,6 +88,25 @@ namespace LastProject403.Controllers
             return View();
         }
 
+        // POST: Orders1/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult OrderStraws([Bind(Include = "orderID,strawID,userID,quantityOrdered")] Orders orders)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Order.Add(orders);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.strawID = new SelectList(db.Straw, "strawID", "strawMaterial", orders.strawID);
+            ViewBag.userID = new SelectList(db.User, "userID", "userEmail", orders.userID);
+            return View(orders);
+        }
+
         public ActionResult ManageOrder()
         {
             return View(db.Order.ToList());
@@ -106,6 +125,20 @@ namespace LastProject403.Controllers
                 return HttpNotFound();
             }
             return View(orders);
+        }
+
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Straws straws = db.Straw.Find(id);
+            if (straws == null)
+            {
+                return HttpNotFound();
+            }
+            return View(straws);
         }
     }
 }
