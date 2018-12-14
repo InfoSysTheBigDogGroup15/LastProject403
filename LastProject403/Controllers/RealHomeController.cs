@@ -142,5 +142,26 @@ namespace LastProject403.Controllers
             }
             return View(straws);
         }
+        public ActionResult DisplayQuestions()
+        {   
+            return View(db.Comments.ToList());
+        }
+        public ActionResult AnswerQ(int? id)
+        {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Comments comments = db.Comments.Find(id);
+            if (comments == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.comment = comments.comments;
+            return View(comments);
+        }
     }
+
+
 }

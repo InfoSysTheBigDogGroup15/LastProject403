@@ -19,5 +19,7 @@ namespace LastProject403.DAL
         public DbSet<Orders> Order { get; set; }
         public DbSet<Straws> Straw { get; set; }
         public DbSet<Users> User { get; set; }
+
+        public System.Data.Entity.DbSet<LastProject403.Models.Comments> Comments { get; set; }
     }
 }
